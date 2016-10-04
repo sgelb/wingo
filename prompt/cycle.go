@@ -367,6 +367,9 @@ func (cycle *Cycle) highlight() {
 	for i, item := range cycle.items {
 		if i == cycle.selected {
 			item.highlight()
+			if cycle.config.InstantChoose {
+				item.choose()
+			}
 		} else {
 			item.unhighlight()
 		}

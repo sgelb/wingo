@@ -72,7 +72,7 @@ cancel := Escape
 # the selected item will be executed instantly and is not delayed until
 # confirmation or closing. As a side effect, the "cancel" key does not cancel
 # any actions and just quits the prompt.
-instant_choose := yes
+instant_choose := no
 
 # The shell to be used to launch commands.
 # It is used like so: `SHELL -c "{COMMAND}"`.

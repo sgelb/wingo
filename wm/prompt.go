@@ -19,9 +19,10 @@ type AllPrompts struct {
 
 func newPrompts() AllPrompts {
 	cycleConfig := prompt.CycleConfig{
-		Grab:       true,
-		CancelKey:  Config.CancelKey,
-		ConfirmKey: Config.ConfirmKey,
+		Grab:          true,
+		CancelKey:     Config.CancelKey,
+		ConfirmKey:    Config.ConfirmKey,
+		InstantChoose: Config.InstantChoose,
 	}
 	selectConfig := prompt.SelectConfig{
 		CancelKey:    Config.CancelKey,

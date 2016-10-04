@@ -406,20 +406,28 @@ var DefaultCycleTheme = &CycleTheme{
 }
 
 // CycleConfig values can be used to create prompts with different
-// configurations. As of right now, the only configuration options supported
-// is whether to issue a keyboard grab and the key to
-// use to "cancel" the prompt. (If empty, no cancel key feature will be used
-// automatically.)
-// For a reasonable default configuration, use DefaultCycleConfig. It will
-// set "Escape" as the cancel key and issue a grab.
+// configurations. Configuration options supported are whether to issue a
+// keyboard grab, the keys to use to "cancel" and "confirm" the prompt and when
+// to execute actions.
+// If empty, no cancel key feature will be used automatically.
+// If InstantChoose is true, the action corresponding to the selected item will
+// be executed instantly and is not delayed until confirmation or closing. As a
+// side effect, canceling does not cancel any actions and just quits the
+// prompt.
+// For a reasonable default configuration, use DefaultCycleConfig. It will set
+// "Escape" as the cancel key, "Enter" as the confirm key, issue a grab and
+// instantly execute actions.
+
 type CycleConfig struct {
-	Grab       bool
-	CancelKey  string
-	ConfirmKey string
+	Grab          bool
+	CancelKey     string
+	ConfirmKey    string
+	InstantChoose bool
 }
 
 var DefaultCycleConfig = CycleConfig{
-	Grab:       true,
-	CancelKey:  "Escape",
-	ConfirmKey: "Return",
+	Grab:          true,
+	CancelKey:     "Escape",
+	ConfirmKey:    "Return",
+	InstantChoose: false,
 }

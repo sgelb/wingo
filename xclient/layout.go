@@ -72,6 +72,11 @@ func (c *Client) FrameTile() {
 	c.FrameBorders()
 }
 
+func (c *Client) FrameTileNada() {
+	c.EnsureUnmax()
+	c.FrameNada()
+}
+
 func (c *Client) MROpt(validate bool, flags, x, y, w, h int) {
 	c.frame.MROpt(validate, flags, x, y, w, h)
 

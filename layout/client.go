@@ -30,6 +30,7 @@ type Client interface {
 	Resize(validate bool, width, height int)
 
 	FrameTile()
+	FrameTileNada()
 
 	HasState(name string) bool
 	SaveState(name string)

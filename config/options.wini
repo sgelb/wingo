@@ -68,6 +68,12 @@ confirm := Return
 # the cancel key is pressed, the prompt disappears and no action occurs.
 cancel := Escape
 
+# This option applies to cycle prompts. If enabled, the action corresponding to
+# the selected item will be executed instantly and is not delayed until
+# confirmation or closing. As a side effect, the "cancel" key does not cancel
+# any actions and just quits the prompt.
+instant_choose := no
+
 # The shell to be used to launch commands.
 # It is used like so: `SHELL -c "{COMMAND}"`.
 # If you need to pass additional arguments to the shell invocation, then

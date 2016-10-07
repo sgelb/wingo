@@ -15,6 +15,7 @@ type Configuration struct {
 	BackspaceKey          string
 	TabKey, RevTabKey     string
 
+	InstantChoose       bool
 	Ffm                 bool
 	FfmFocus            bool
 	FfmRaise            bool
@@ -40,6 +41,7 @@ func newConfig() *Configuration {
 		TabKey:       "Tab",
 		RevTabKey:    "ISO_Left_Tab",
 
+		InstantChoose:   false,
 		Ffm:             false,
 		FfmFocus:        true,
 		FfmRaise:        false,
@@ -200,6 +202,8 @@ func (conf *Configuration) loadOptionsConfigSection(
 			setString(key, &conf.CancelKey)
 		case "confirm":
 			setString(key, &conf.ConfirmKey)
+		case "instant_choose":
+			setBool(key, &conf.InstantChoose)
 		case "shell":
 			setString(key, &conf.Shell)
 		case "audio_play_cmd":

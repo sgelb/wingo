@@ -29,7 +29,7 @@ func (m *Maximized) Place() {
 	for el := m.clients.Front(); el != nil; el = el.Next() {
 		c := el.Value.(Client)
 		x, y, w, h := m.geom.X(), m.geom.Y(), m.geom.Width(), m.geom.Height()
-		c.FrameTile()
+		c.FrameTileNada()
 		c.MoveResize(x, y, w, h)
 	}
 }

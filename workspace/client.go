@@ -40,4 +40,5 @@ type Client interface {
 	Resize(validate bool, width, height int)
 
 	FrameTile()
+	FrameTileNada()
 }

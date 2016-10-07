@@ -156,13 +156,15 @@ func (cycle *Cycle) keyResponse() xevent.KeyReleaseFun {
 			return
 		}
 
+		// If the key release is the confirm key, choose selection
+		if keybind.KeyMatch(X, cycle.config.ConfirmKey, mods, kc) {
+			cycle.Choose()
+		}
+
 		mods &= ^keybind.ModGet(X, ev.Detail)
 		if cycle.grabMods > 0 {
 			if mods&cycle.grabMods == 0 {
-				cycle.Choose()
-			}
-		} else {
-			if keybind.KeyMatch(X, cycle.config.ConfirmKey, mods, kc) {
+				// if all cycle prompt modifier keys are released, choose selection
 				cycle.Choose()
 			}
 		}

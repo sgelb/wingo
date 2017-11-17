@@ -1,3 +1,20 @@
+**This is a fork of BurntSushi's fantastic window manager Wingo with a few small
+changes. All changes are developed in own branches and merged into master.**
+
+### [instant_choose](https://github.com/sgelb/wingo/tree/instant_choose)
+
+This adds a boolean option `instant_choose` to `options.ini`. It applies to
+cycle prompts called e.g. by `CycleClientNext`. If enabled, the action
+corresponding to the selected item will be executed instantly and is not delayed
+until confirmation or closing. As a side effect, the "cancel" key does not
+cancel any actions and just quits the prompt.
+
+### [maximized_layout_nada_the](https://github.com/sgelb/wingo/tree/maximized_layout_nada_theme)
+
+The Maximized layout uses the Nada theme.
+
+---
+
 **NOTE: This repository is in maintenance mode. Wingo is still used every day,
 but because there are no tests, it is impossible to add new functionality.
 Therefore, I will only be doing work on Wingo required to make it work.**
